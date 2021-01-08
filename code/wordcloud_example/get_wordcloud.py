@@ -2,7 +2,7 @@ from wordcloud import WordCloud
 import io
 import base64
 # 真正调用词云库生成图片
-def get_word_cloud(text):
+async def get_word_cloud(text):
     # font = "./SimHei.ttf"
     # pil_img = WordCloud(width=500, height=500, font_path=font).generate(text=text).to_image()
 
