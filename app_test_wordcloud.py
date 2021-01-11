@@ -46,7 +46,8 @@ def test_get_request_includes_data(url):
 # 给 POST 请求传递 JSON 数据：
 
 def tt_post_json_request_includes_data(url):
-    data = {'key1': 'value1', 'key2': 'value2'}
+    # data = {'key1': 'value1', 'key2': 'value2'}
+    data={'word':'hello python NIhao hello test hell0'}
     request,response =app.test_client.post(url, data=json.dumps(data))
     # assert request.json.get('key1') == 'value1'
 
@@ -62,8 +63,10 @@ if __name__=='__main__':
     # res = post_processing(post_server=True,port=8888,data=data_json)
 
     # res = post_processing(post_server=False, port=8900, data=data_json)
-    # res=tt_post_json_request_includes_data('http://localhost:18401/word/cloud/generate')
-    res=test_get_request_includes_data('http://localhost:18401/word/cloud/generate')
+    #http://localhost:18401/word/cloud/generate #sanic 服务地址
+    #http://localhost:18402/word/cloud/generate #flask 服务地址
+    res=tt_post_json_request_includes_data('http://localhost:18402/word/cloud/generate')
+    # res=test_get_request_includes_data('http://localhost:18401/word/cloud/generate')
 
     # res = tt_post_json_request_includes_data('http://localhost:8888/hello')
     # res=test_get_request_includes_data('http://localhost:8900/hello')

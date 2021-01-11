@@ -35,7 +35,8 @@ async def get_wordcloud(request):
         print('content',content)
         text=content['word']
         # text='"life is short,you need python"'
-        res = await get_word_cloud(text)##await后面需要接协程对象，即定义成异步函数即可
+        # res = await get_word_cloud(text)##await后面需要接协程对象，即定义成异步函数即可
+        res = get_word_cloud(text)
 
         # content=content['data']
         logger.info('from client type content:{}'.format(type(content)))  # Do your processing
